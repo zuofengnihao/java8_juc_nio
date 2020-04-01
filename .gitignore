@@ -7,5 +7,5 @@
 *.iml
 out
 gen
-.gitignore
 /java8_juc_nio.iml
+
