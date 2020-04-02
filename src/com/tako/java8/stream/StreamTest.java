@@ -1,4 +1,4 @@
-package com.tako.stream;
+package com.tako.java8.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;

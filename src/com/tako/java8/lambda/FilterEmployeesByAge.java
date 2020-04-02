@@ -1,4 +1,4 @@
-package com.tako.lambda;
+package com.tako.java8.lambda;
 
 public class FilterEmployeesByAge implements MyPredicate<Employee> {
 

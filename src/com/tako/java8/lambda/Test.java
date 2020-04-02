@@ -1,4 +1,4 @@
-package com.tako.lambda;
+package com.tako.java8.lambda;
 
 import java.util.ArrayList;
 import java.util.Arrays;

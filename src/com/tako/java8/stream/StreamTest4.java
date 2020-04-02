@@ -1,6 +1,6 @@
-package com.tako.stream;
+package com.tako.java8.stream;
 
-import com.tako.lambda.Employee;
+import com.tako.java8.lambda.Employee;
 
 import java.util.*;
 import java.util.stream.Collectors;

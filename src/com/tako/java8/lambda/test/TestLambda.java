@@ -1,4 +1,4 @@
-package com.tako.lambda.test;
+package com.tako.java8.lambda.test;
 
 import java.util.Comparator;
 import java.util.function.Consumer;

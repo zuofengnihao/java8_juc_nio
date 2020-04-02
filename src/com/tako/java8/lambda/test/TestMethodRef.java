@@ -1,6 +1,6 @@
-package com.tako.lambda.test;
+package com.tako.java8.lambda.test;
 
-import com.tako.lambda.Employee;
+import com.tako.java8.lambda.Employee;
 
 import java.util.Comparator;
 import java.util.function.BiPredicate;

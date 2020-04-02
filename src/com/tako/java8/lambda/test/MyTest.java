@@ -1,4 +1,4 @@
-package com.tako.lambda.test;
+package com.tako.java8.lambda.test;
 
 public class MyTest {
 
