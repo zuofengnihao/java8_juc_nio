@@ -5,6 +5,9 @@ import java.util.concurrent.RecursiveTask;
 /**
  * fork join 框架: 将一个复杂任务拆分成多个小任务
  * 工作窃取: 当一个核心闲置了会随机窃取其他核心线程队列末尾的一个线程任务来执行
+ *
+ * 使用: 继承RecursiveTask<T> 实现 compute() 方法
+ * task.fork() 拆分 task.join() 合并
  */
 public class ForkJoinCalculate extends RecursiveTask<Long> {
 

@@ -27,7 +27,7 @@ public class TestCountDownLatch {
 
         long end = System.currentTimeMillis();
 
-        System.out.println(end - begin);
+        System.out.println("\n" + "耗时 : " + (end - begin));
     }
 }
 
@@ -43,7 +43,12 @@ class LatchDemo implements Runnable {
     public void run() {
         try {
             for (int i = 0; i < 50000; i++) {
-                if (i % 2 == 0) System.out.println(i);
+                if (i % 2 == 0) {
+                    if (i == 0)  {
+                        System.err.print("\n" + i + " ");
+                    } else
+                        System.out.print(i + " ");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
