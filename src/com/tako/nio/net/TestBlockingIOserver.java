@@ -1,4 +1,4 @@
-package com.tako.nio.web;
+package com.tako.nio.net;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -28,53 +28,13 @@ import java.nio.file.StandardOpenOption;
  *  3. 选择器(Selector) : 是 SelectableChannel 的多路复用器.用于监控SelectableChannel 的 IO 状况
  *
  */
-public class TestBlockingIO {
+public class TestBlockingIOserver {
 
     public static void main(String[] args) {
-
+        server();
     }
 
-    public void client() {
-        SocketChannel socketChannel = null;
-        FileChannel fileChannel = null;
-
-        try {
-            //1. 获取通道
-            socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 8888));
-
-            //2. 分配指定大小的缓冲区
-            ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-
-            //3. 读取本地文件 并发送到客户端
-            fileChannel = FileChannel.open(Paths.get("C:\\Users\\admin\\Desktop\\二维码\\1.jpg"), StandardOpenOption.READ);
-
-            while (fileChannel.read(byteBuffer) != -1) {
-                byteBuffer.flip();
-                socketChannel.write(byteBuffer);
-                byteBuffer.clear();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fileChannel != null) {
-                try {
-                    fileChannel.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (socketChannel != null) {
-                try {
-                    socketChannel.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    public void server() {
+    public static void server() {
         ServerSocketChannel serverSocketChannel = null;
         SocketChannel socketChannel = null;
         FileChannel fileChannel = null;
@@ -89,7 +49,7 @@ public class TestBlockingIO {
             socketChannel = serverSocketChannel.accept();
 
             //4. 接受客户端数据并保持到本地
-            fileChannel = FileChannel.open(Paths.get("C:\\Users\\admin\\Desktop\\二维码\\1.jpg"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
+            fileChannel = FileChannel.open(Paths.get("C:\\Users\\admin\\Desktop\\二维码\\2.jpg"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);
             ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 
             while (socketChannel.read(byteBuffer) != -1) {
